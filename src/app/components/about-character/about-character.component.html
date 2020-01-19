@@ -1,4 +1,7 @@
 <p>about-character works!</p>
 <div *ngIf="character">
-    <p>{{character[0].thumbnail.path}}</p>
+    <p>{{character.thumbnail.path}}</p>
+</div>
+<div *ngFor="let storie of stories">
+    <p>{{storie?.title}}</p>
 </div>
