@@ -17,7 +17,6 @@ export class AboutCharacterComponent implements OnInit, AfterContentInit {
   constructor(private charactersService: CharactersService, private storieService: StoriesService) { }
 
   ngOnInit() {
-    // this.stories = [];
     this.getData();
   }
 
@@ -27,7 +26,6 @@ export class AboutCharacterComponent implements OnInit, AfterContentInit {
   }
 
   getData() {
-    // this.stories = []
     this.charactersService.getData().subscribe(response => {
       this.character = response[0];
       response[0].stories.items.forEach(item => {
