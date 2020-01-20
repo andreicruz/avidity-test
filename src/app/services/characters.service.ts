@@ -12,8 +12,8 @@ export class CharactersService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getData(): Observable<Character> {
-    return this.httpClient.get<Character>(`${api.url}characters/1010338?ts=1&apikey=${api.credentials.apiKey}&hash=${api.credentials.hash}`)
+  getData(id): Observable<Character> {
+    return this.httpClient.get<Character>(`${api.url}characters/${id}?ts=1&apikey=${api.credentials.apiKey}&hash=${api.credentials.hash}`)
     .pipe(map((data: any) => data.data.results));
   }
 }
