@@ -3,5 +3,14 @@
     <p>{{character.thumbnail.path}}</p>
 </div>
 <div *ngFor="let storie of stories">
-    <p>{{storie?.title}}</p>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" (click)="getCharacter(storie)">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{storie?.title}}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div *ngFor="let item of storie.characters.items">
+            <p>{{item.name}}</p>
+        </div>
+    </mat-expansion-panel>
 </div>
