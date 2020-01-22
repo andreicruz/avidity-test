@@ -8,6 +8,7 @@ import { AboutCharacterComponent } from './components/about-character/about-char
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
