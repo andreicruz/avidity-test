@@ -12,7 +12,6 @@ export interface Characters {
     available: number;
     collectionURI: string;
     items: Array<Items>;
-    returned: number;
 };
 
 export interface Items {
