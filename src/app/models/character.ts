@@ -1,39 +1,3 @@
-// export interface MyObject {
-//     code: number;
-//     status: string;
-//     copyright: Date;
-//     attributionText: Date;
-//     attributionHTML: string;
-//     etag: string;
-//     data: Character;
-// };
-
-// export interface Character {
-//     id: number;
-//     name: string;
-//     description?: any;
-//     thumbnail: Thumbnail;
-//     resourceURI: string;
-//     stories: Stories;
-// };
-
-// export interface Thumbnail {
-//     path: string;
-//     extension: string;
-// };
-
-// export interface Stories {
-//     available: number;
-//     collectionURI: string;
-//     item: Item;
-//     returned: number;
-// };
-
-// export interface Item {
-//     resourceURI: string;
-//     name: string;
-// };
-
 export interface MyObject {
     code: number;
     status: string;
