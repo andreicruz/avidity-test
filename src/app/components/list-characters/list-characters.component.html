@@ -1,0 +1,32 @@
+<div class="list-characters">
+    <div class="cards">
+        <div *ngIf="object">
+            <div class="row">
+                <div class="col-4" *ngFor="let character of object.data.results">
+                    <div class="item">                    
+                        <mat-card>
+                            <div class="name">{{character.name}}</div>
+                            <div class="background-image" [ngStyle]="{'background-image': 'url(' + character.thumbnail.path + '.' + character.thumbnail.extension + ')'}"></div>
+                            <mat-card-content>
+                                <div class="description">
+                                    <div *ngIf="character.description.length === 0; else description">
+                                        <div class="text">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula ante ut convallis tincidunt. Mauris vel urna eget dolor viverra fermentum id nec nisi. Integer id quam quis ex vestibulum malesuada. Donec vulputate dolor et scelerisque posuere. 
+                                            Nam pretium lectus eget cursus varius. Duis consequat imperdiet porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec viverra nulla at purus eleifend, ut egestas tellus efficitur. Fusce neque magna, tempus vitae nulla in, molestie tincidunt nisi.
+                                        </div>
+                                    </div>
+                                    <ng-template #description>
+                                        <div class="text">
+                                            {{character.description}}
+                                        </div>
+                                    </ng-template>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button (click)="teste()">Next Page</button>
+</div>
