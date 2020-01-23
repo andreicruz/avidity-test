@@ -3,6 +3,7 @@ import { CharactersService } from 'src/app/services/characters.service';
 import { MyObject, Results } from 'src/app/models/character';
 import { StoriesService } from 'src/app/services/stories.service';
 import { Storie } from 'src/app/models/stories';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-about-character',
@@ -15,7 +16,9 @@ export class AboutCharacterComponent implements OnInit {
   private stories: Storie;
   private characterOfHistories: Results[] = [];
   
-  constructor(private charactersService: CharactersService, private storieService: StoriesService) { }
+  constructor(private charactersService: CharactersService, 
+              private storieService: StoriesService,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getData();
@@ -24,14 +27,14 @@ export class AboutCharacterComponent implements OnInit {
   getCharacter(storie: Storie) {
     this.characterOfHistories = [];
     storie.characters.items.forEach(item => {
-      this.charactersService.getData(item.resourceURI.split('characters/')[1]).subscribe(character => {
+      this.charactersService.getCharacter(item.resourceURI.split('characters/')[1]).subscribe(character => {
         this.characterOfHistories.push(character.data.results[0]);
       })
     })
   }
 
   getData() {
-    this.charactersService.getData(1010338).subscribe(response => {
+    this.charactersService.getCharacter(this.route.snapshot.paramMap.get('id')).subscribe(response => {
       this.object = response;
       console.log(response.data.results[0].stories.items[0].resourceURI);
       this.storieService.getData(response.data.results[0].stories.items[0].resourceURI).subscribe(storie => {
