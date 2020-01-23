@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  avidity-test:
+    image: avidity-test
+    build: .
+    ports:
+      - 8081:80
