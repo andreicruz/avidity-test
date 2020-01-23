@@ -6,7 +6,7 @@ export interface MyObject {
     attributionHTML: string;
     etag: string;
     data: Data;
-};
+}
 
 export interface Data {
     offset: number;
@@ -14,7 +14,7 @@ export interface Data {
     total: number;
     count: number;
     results: Array<Results>;
-};
+}
 
 export interface Results {
     id: number;
@@ -24,12 +24,12 @@ export interface Results {
     thumbnail: Thumbnail;
     resourceURI: string;
     stories: Stories;
-};
+}
 
 export interface Thumbnail {
     path: string;
     extension: string;
-};
+}
 
 
 export interface Stories {
@@ -37,9 +37,9 @@ export interface Stories {
     collectionURI: string;
     items: Array<Items>;
     returned: number;
-};
+}
 
 export interface Items {
     resourceURI: string;
     name: string;
-};
+}

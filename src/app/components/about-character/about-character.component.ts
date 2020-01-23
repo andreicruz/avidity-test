@@ -15,8 +15,8 @@ export class AboutCharacterComponent implements OnInit {
   private object: MyObject;
   private stories: Storie;
   private characterOfHistories: Results[] = [];
-  
-  constructor(private charactersService: CharactersService, 
+
+  constructor(private charactersService: CharactersService,
               private storieService: StoriesService,
               private route: ActivatedRoute) { }
 
@@ -29,18 +29,17 @@ export class AboutCharacterComponent implements OnInit {
     storie.characters.items.forEach(item => {
       this.charactersService.getCharacter(item.resourceURI.split('characters/')[1]).subscribe(character => {
         this.characterOfHistories.push(character.data.results[0]);
-      })
-    })
+      });
+    });
   }
 
   getData() {
     this.charactersService.getCharacter(this.route.snapshot.paramMap.get('id')).subscribe(response => {
       this.object = response;
-      console.log(response.data.results[0].stories.items[0].resourceURI);
       this.storieService.getData(response.data.results[0].stories.items[0].resourceURI).subscribe(storie => {
         this.stories = storie;
-      })
-    })
+      });
+    });
   }
 
 }

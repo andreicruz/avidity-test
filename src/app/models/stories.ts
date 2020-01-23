@@ -6,15 +6,15 @@ export interface Storie {
     type: string;
     thumbnail?: any;
     characters: Characters;
-};
+}
 
 export interface Characters {
     available: number;
     collectionURI: string;
     items: Array<Items>;
-};
+}
 
 export interface Items {
     resourceURI: string;
     name: string;
-};
+}
