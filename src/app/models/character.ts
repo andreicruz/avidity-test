@@ -1,8 +1,8 @@
 export interface MyObject {
     code: number;
     status: string;
-    copyright: Date;
-    attributionText: Date;
+    copyright: string;
+    attributionText: string;
     attributionHTML: string;
     etag: string;
     data: Data;

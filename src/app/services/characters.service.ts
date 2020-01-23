@@ -16,7 +16,6 @@ export class CharactersService {
   }
 
   getData(offset: number): Observable<MyObject> {
-    return this.httpClient.get<MyObject>(`${api.url}characters?ts=1&apikey=${api.credentials.apiKey}
-    &hash=${api.credentials.hash}&offset=${offset}`);
+    return this.httpClient.get<MyObject>(`${api.url}characters?ts=1&apikey=${api.credentials.apiKey}&hash=${api.credentials.hash}&offset=${offset}`);
   }
 }
