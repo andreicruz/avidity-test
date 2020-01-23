@@ -11,7 +11,11 @@ export class CharactersService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getData(id): Observable<MyObject> {
+  getCharacter(id): Observable<MyObject> {
     return this.httpClient.get<MyObject>(`${api.url}characters/${id}?ts=1&apikey=${api.credentials.apiKey}&hash=${api.credentials.hash}`);
+  }
+
+  getData(offset: number): Observable<MyObject> {
+    return this.httpClient.get<MyObject>(`${api.url}characters?ts=1&apikey=${api.credentials.apiKey}&hash=${api.credentials.hash}&offset=${offset}`);
   }
 }
