@@ -1,12 +1,37 @@
 <div class="list-characters">
     <div class="cards">
         <div *ngIf="object">
+            <div class="buttons">
+                <div>
+                    <button matTooltip="Previous Page"
+                            [matTooltipPosition]="positionTooltip" 
+                            (click)="previousPage()"
+                            type="button" 
+                            class="btn btn-success btn-circle col-4"
+                            [ngStyle]="{'display':object.data.offset === 0 ? 'none' : 'inline-block' }"
+                    >
+                        <fa-icon [icon]="faArrowLeft"></fa-icon>
+                    </button>
+                </div>
+                <div class="mt-2">
+                    <button type="button" 
+                            matTooltip="Next Page"
+                            (click)="nextPage()"
+                            class="btn btn-primary btn-circle col-4"
+                            [ngStyle]="{'display':object.data.offset === object.data.total ? 'none' : 'inline-block' }"
+                    >
+                        <fa-icon [icon]="faArrowRight"></fa-icon>
+                    </button>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-4" *ngFor="let character of object.data.results">
+                <div class="col-4 mb-4" *ngFor="let character of object.data.results">
                     <div class="item">                    
                         <mat-card>
-                            <div class="name">{{character.name}}</div>
-                            <div class="background-image" [ngStyle]="{'background-image': 'url(' + character.thumbnail.path + '.' + character.thumbnail.extension + ')'}"></div>
+                            <a [routerLink]="['/about/'+ character?.id]">
+                                <div class="name">{{character.name}}</div>
+                                <div class="background-image" [ngStyle]="{'background-image': 'url(' + character.thumbnail.path + '.' + character.thumbnail.extension + ')'}"></div>
+                            </a>
                             <mat-card-content>
                                 <div class="description">
                                     <div *ngIf="character.description.length === 0; else description">
@@ -28,5 +53,4 @@
             </div>
         </div>
     </div>
-    <button (click)="teste()">Next Page</button>
 </div>

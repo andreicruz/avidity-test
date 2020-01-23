@@ -1,11 +1,16 @@
 .list-characters
     .cards
         .item
+            a
+                color: black
+                &:hover
+                    text-decoration: none
             .name
                 font-weight: bold
                 margin-bottom: 5px
                 white-space: nowrap
             .background-image
+                background-position: center center
                 background-repeat: no-repeat
                 background-size: cover
                 height: 500px
@@ -19,3 +24,30 @@
         .text
             height: 100px
             overflow: auto
+    .buttons
+        display: flex
+        flex-direction: column
+        position: fixed
+        right: 0
+        top: 50%
+        text-align: center
+        width: 10%
+        div
+            button
+                margin: 0px 5px
+            .btn-circle
+                border-radius: 25px
+                color: white
+                font-size: 18px
+                height: 50px
+                line-height: 1.33
+                padding: 10px 10px
+                width: 50px
+            
+
+
+
+.hide
+    display: none
+.show
+    display: block
