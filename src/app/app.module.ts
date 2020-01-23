@@ -9,11 +9,13 @@ import { AboutCharacterComponent } from './components/about-character/about-char
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
+import { ListCharactersComponent } from './components/list-characters/list-characters.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutCharacterComponent
+    AboutCharacterComponent,
+    ListCharactersComponent
   ],
   imports: [
     BrowserModule,
