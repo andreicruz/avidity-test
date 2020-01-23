@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutCharacterComponent } from './components/about-character/about-character.component';
+import { ListCharactersComponent } from './components/list-characters/list-characters.component';
 
 
 const routes: Routes = [
-  { path: 'about/1010338', component: AboutCharacterComponent}
+  { path: 'about/:id', component: AboutCharacterComponent},
+  { path: '**', component: ListCharactersComponent},
 ];
 
 @NgModule({
