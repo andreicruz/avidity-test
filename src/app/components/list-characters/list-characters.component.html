@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-4 mb-4" *ngFor="let character of object.data.results">
+                <div class="col-12 col-md-4 mb-4" *ngFor="let character of object.data.results">
                     <div class="item">                    
                         <mat-card>
                             <a [routerLink]="['/about/'+ character?.id]">
@@ -50,6 +50,9 @@
                         </mat-card>
                     </div>
                 </div>
+            </div>
+            <div class="copyright">
+                {{object.attributionText}}
             </div>
         </div>
     </div>

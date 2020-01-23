@@ -28,7 +28,7 @@
                                 </mat-panel-title>
                             </mat-expansion-panel-header>
                             <div class="panel-cards row">
-                                <div *ngFor="let character of characterOfHistories" class="col-4"> 
+                                <div *ngFor="let character of characterOfHistories" class="col-12 col-md-4"> 
                                     <div class="item">
                                         <div class="name">{{character.name}}</div>
                                         <div class="background-image" [ngStyle]="{'background-image': 'url(' + character.thumbnail.path + '.' + character.thumbnail.extension + ')'}"></div>
@@ -52,6 +52,9 @@
                     </div>
                 </div>
             </mat-card>
+        </div>
+        <div class="copyright">
+            {{object.attributionText}}
         </div>
     </div>
 </div>
